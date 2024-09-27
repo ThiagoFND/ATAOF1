@@ -5,21 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentação do Sistema de Livros</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        html {
+            scroll-behavior: smooth; /* Rolamento suave */
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="header-container">
             <h1>Sistema de Gerenciamento de Livros</h1>
-            <p>Uma aplicação para organização e gerenciamento de livros, utilizando algoritmos de ordenação Quick Sort.</p>
+            <p>Uma aplicação para organização e gerenciamento de livros, utilizando algoritmos avançados de recomendação.</p>
         </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#destaque-geral">Descrição Geral</a></li>
+                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                <li><a href="#interface">Interface Gráfica</a></li>
+                <li><a href="#algoritmos">Algoritmos</a></li>
+                <li><a href="#validacao">Validações</a></li>
+                <li><a href="#capacidade">Capacidade</a></li>
+                <li><a href="#consideracoes">Considerações Finais</a></li>
+                <li><a href="#classes">Classes e Métodos</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section id="destaque-geral">
         <div class="container">
             <h2>Descrição Geral</h2>
             <p>
-                Este sistema permite que o usuário adicione, liste e organize livros utilizando algoritmos eficientes de ordenação. 
-                A aplicação implementa o Quick Sort para ordenar os livros por título e por autor, proporcionando uma forma prática e intuitiva de gerenciar o acervo. 
+                Este sistema permite que o usuário adicione, liste e organize livros utilizando algoritmos eficientes de recomendação. 
+                A aplicação implementa estruturas de dados como árvores binárias para organizar os livros e facilitar operações avançadas de busca e recomendação. 
                 A capacidade máxima do sistema é de 100 livros.
             </p>
         </div>
@@ -31,8 +49,9 @@
             <ul>
                 <li><strong>Adicionar Livros:</strong> Adiciona um novo livro ao acervo com informações como título, autor e ano de publicação.</li>
                 <li><strong>Listar Livros:</strong> Exibe todos os livros cadastrados no sistema.</li>
-                <li><strong>Ordenar Livros:</strong> Ordena os livros por título ou por autor usando o algoritmo Quick Sort.</li>
+                <li><strong>Ordenar Livros:</strong> Ordena os livros por título ou por autor.</li>
                 <li><strong>Remover Livros:</strong> Remove um livro específico do acervo.</li>
+                <li><strong>Recomendar Livros:</strong> Sugere livros relacionados com base em critérios específicos, como autor ou tema.</li>
             </ul>
         </section>
 
@@ -44,15 +63,16 @@
             <ul>
                 <li><strong>Formulário de Adição:</strong> Campos para inserir informações sobre o livro.</li>
                 <li><strong>Área de Exibição:</strong> Um painel que lista todos os livros cadastrados.</li>
-                <li><strong>Botões de Ação:</strong> Opções para ordenar a lista de livros por título ou autor e remover livros.</li>
+                <li><strong>Botões de Ação:</strong> Opções para ordenar a lista de livros por título ou autor, remover livros e recomendar livros.</li>
             </ul>
         </section>
 
         <section id="algoritmos">
-            <h2>3. Algoritmo de Ordenação</h2>
-            <p><strong>Ordenação (Quick Sort):</strong></p>
+            <h2>3. Algoritmos de Busca e Recomendação</h2>
+            <p><strong>Estrutura de Árvore (Árvore Binária de Busca):</strong></p>
             <p>
-                O Quick Sort é um algoritmo eficiente que utiliza a técnica de divisão e conquista. Ele seleciona um pivô e ordena a lista recursivamente, separando os livros em sublistas com base em suas comparações com o pivô. 
+                A árvore binária de busca é utilizada para organizar os livros de forma eficiente, permitindo operações de busca rápidas e recomendações personalizadas com base nas relações entre autores e temas. 
+                A implementação atual inclui funcionalidades de adicionar, listar, remover e recomendar livros, além de métodos para buscar por autor e ordenar os livros.
             </p>
         </section>
 
@@ -67,7 +87,7 @@
         <section id="capacidade">
             <h2>5. Capacidade e Limitações</h2>
             <p>
-                A aplicação suporta até 100 livros e utiliza o algoritmo Quick Sort para ordenação, que é eficiente para grandes volumes de dados. 
+                A aplicação suporta até 100 livros e utiliza estruturas de dados avançadas para organização e recomendação. 
                 Não há suporte para Bubble Sort na implementação atual, o que melhora a eficiência da ordenação.
             </p>
         </section>
@@ -75,9 +95,40 @@
         <section id="consideracoes">
             <h2>6. Considerações Finais</h2>
             <p>
-                Esta aplicação fornece uma interface amigável para gerenciamento de livros com funcionalidades práticas de ordenação. 
-                Em versões futuras, funcionalidades como pesquisa de livros e uma melhor interface para remoção de livros podem ser adicionadas para aprimorar a experiência do usuário.
+                Esta aplicação fornece uma interface amigável para gerenciamento de livros com funcionalidades práticas de recomendação e organização. 
+                Em versões futuras, funcionalidades como pesquisa avançada de livros e uma interface aprimorada para remoção de livros podem ser adicionadas para melhorar a experiência do usuário.
             </p>
+        </section>
+
+        <section id="classes">
+            <h2>7. Classes e Métodos</h2>
+            <h3>Classe: ArvoreBinaria</h3>
+            <p>Esta classe implementa uma árvore binária para gerenciar livros.</p>
+            <h4>Métodos</h4>
+            <ul>
+                <li><strong>inserir(Livro livro):</strong> Insere um novo livro na árvore.</li>
+                <li><strong>exibirLivrosEmOrdem():</strong> Exibe todos os livros na árvore em ordem.</li>
+            </ul>
+
+            <h3>Classe: GerenciadorDeLivros</h3>
+            <p>Esta classe gerencia a adição, remoção e exibição de livros, bem como recomendações.</p>
+            <h4>Métodos</h4>
+            <ul>
+                <li><strong>adicionarLivro(String titulo, String autor, int ano):</strong> Adiciona um novo livro ao gerenciamento.</li>
+                <li><strong>listarLivros():</strong> Lista todos os livros no painel de exibição.</li>
+                <li><strong>removerLivro(String titulo):</strong> Remove um livro com base no título.</li>
+                <li><strong>buscarPorAutor(String autor):</strong> Busca livros de um autor específico.</li>
+                <li><strong>ordenarPorTitulo():</strong> Ordena os livros por título.</li>
+                <li><strong>ordenarPorAutor():</strong> Ordena os livros por autor.</li>
+            </ul>
+
+            <h3>Classe: Main</h3>
+            <p>Classe principal que cria a interface gráfica do sistema de gerenciamento de livros.</p>
+            <h4>Métodos</h4>
+            <ul>
+                <li><strong>main(String[] args):</strong> Ponto de entrada do programa.</li>
+                <li><strong>criarInterface():</strong> Cria a interface gráfica do sistema.</li>
+            </ul>
         </section>
     </div>
 

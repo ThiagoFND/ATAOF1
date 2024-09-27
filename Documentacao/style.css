@@ -11,6 +11,10 @@ body {
     line-height: 1.8;
 }
 
+html {
+    scroll-behavior: smooth; /* Rolamento suave */
+}
+
 .container {
     width: 85%;
     max-width: 1200px;
@@ -26,6 +30,8 @@ header {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 header h1 {
@@ -41,10 +47,38 @@ header p {
     margin: 0 auto;
 }
 
+.navbar {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 14px;
+    display: block;
+}
+
 #destaque-geral {
     background: linear-gradient(135deg, black, #00cec9);
     padding: 60px 20px;
-    margin-top: -30px;
+    margin-top: 70px; /* Para evitar sobreposição da navbar fixa */
     margin-bottom: 40px;
     border-radius: 15px;
     text-align: center;

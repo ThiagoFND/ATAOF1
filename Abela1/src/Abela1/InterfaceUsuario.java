@@ -27,7 +27,7 @@ public class InterfaceUsuario {
         frame.add(buttonsPanel, BorderLayout.SOUTH);
         frame.add(scrollPane, BorderLayout.CENTER);
 
-        gerenciadorDeLivros.listarLivros(); // Atualizar a lista de livros ao iniciar
+        gerenciadorDeLivros.listarLivros();
 
         frame.setVisible(true);
     }
